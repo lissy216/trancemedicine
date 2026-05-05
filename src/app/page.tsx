@@ -1,8 +1,67 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Trance Medicine | Body-Centered Hypnosis for Healing & Practice",
+  description:
+    "Trance Medicine is body-centered, evidence-informed hypnosis by Miskwa Kimiwan. Private hypnosis sessions, the Quiet Fire CPH certification, and the book that reframes what hypnosis can do.",
+  alternates: { canonical: "https://trancemedicine.com" },
+  openGraph: {
+    title: "Trance Medicine | Body-Centered Hypnosis for Healing & Practice",
+    description:
+      "Body-centered, evidence-informed hypnosis. Private sessions, CPH certification training, and the book Trance Medicine by Miskwa Kimiwan.",
+    url: "https://trancemedicine.com",
+    type: "website",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://trancemedicine.com/#person",
+      name: "Miskwa Kimiwan",
+      url: "https://trancemedicine.com/about",
+      jobTitle: "Certified Professional Hypnotist",
+      description:
+        "Body-centered, evidence-informed hypnosis practitioner and author of Trance Medicine.",
+      knowsAbout: [
+        "Hypnosis",
+        "Clinical Hypnosis",
+        "Somatic Therapy",
+        "Trance Work",
+        "Hypnosis Training",
+        "Body-Centered Healing",
+      ],
+      sameAs: ["https://calendly.com/the8thfire"],
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://trancemedicine.com/#service",
+      name: "Trance Medicine",
+      url: "https://trancemedicine.com",
+      description:
+        "Body-centered, evidence-informed hypnosis — private sessions, CPH certification training, and the book Trance Medicine.",
+      provider: { "@id": "https://trancemedicine.com/#person" },
+      serviceType: "Hypnotherapy",
+      areaServed: ["Canada", "United States"],
+      availableChannel: {
+        "@type": "ServiceChannel",
+        serviceUrl: "https://trancemedicine.com/sessions/private",
+        availableLanguage: "English",
+      },
+    },
+  ],
+};
 
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero */}
       <section
         className="min-h-screen flex items-center justify-center px-6 py-24"

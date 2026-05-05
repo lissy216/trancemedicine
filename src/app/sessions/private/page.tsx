@@ -3,9 +3,17 @@ import Link from "next/link";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 export const metadata: Metadata = {
-  title: "Private Sessions",
+  title: "Private Hypnosis Sessions | Trance Medicine",
   description:
-    "Private hypnosis sessions. Body-centered, evidence-informed. A held space where you and your body do the work.",
+    "Private hypnosis sessions with Miskwa Kimiwan. Body-centered, evidence-informed. Virtual and in-person at Dark Horse Healing Lodge. Book a 90-minute initial session.",
+  alternates: { canonical: "https://trancemedicine.com/sessions/private" },
+  openGraph: {
+    title: "Private Hypnosis Sessions | Trance Medicine",
+    description:
+      "Body-centered hypnosis sessions with a practitioner who has done his own work and is not afraid of yours. Virtual and in-person available.",
+    url: "https://trancemedicine.com/sessions/private",
+    type: "website",
+  },
 };
 
 export default function PrivateSessions() {

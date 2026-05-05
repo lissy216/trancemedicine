@@ -2,14 +2,47 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Trance Medicine — The Book",
+  title: "Trance Medicine — The Book by Miskwa Kimiwan",
   description:
-    "The book the hypnosis field was not ready for. 30 chapters on what hypnosis actually looks like when you strip away the performance and the clinical distance.",
+    "Trance Medicine is a 30-chapter book on body-centered hypnosis by Miskwa Kimiwan. What hypnosis actually looks like when stripped of performance and clinical distance.",
+  alternates: { canonical: "https://trancemedicine.com/book" },
+  openGraph: {
+    title: "Trance Medicine — The Book by Miskwa Kimiwan",
+    description:
+      "30 chapters on what hypnosis actually looks like when you strip away the performance and the clinical distance. A book for practitioners, clients, and the curious.",
+    url: "https://trancemedicine.com/book",
+    type: "book",
+  },
+};
+
+const bookJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  name: "Trance Medicine",
+  url: "https://trancemedicine.com/book",
+  author: {
+    "@type": "Person",
+    name: "Miskwa Kimiwan",
+    url: "https://trancemedicine.com/about",
+  },
+  description:
+    "30 chapters on body-centered, evidence-informed hypnosis. What hypnosis actually looks like when you strip away the performance and the clinical distance.",
+  genre: ["Hypnosis", "Psychology", "Mind-Body Medicine", "Self-Help"],
+  inLanguage: "en",
+  publisher: {
+    "@type": "Organization",
+    name: "Trance Medicine",
+    url: "https://trancemedicine.com",
+  },
 };
 
 export default function Book() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(bookJsonLd) }}
+      />
       {/* Hero */}
       <section className="py-24 px-6" style={{ backgroundColor: "#2F2925" }}>
         <div className="max-w-3xl mx-auto">

@@ -2,9 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About Miskwa Kimiwan | Certified Professional Hypnotist & Author",
   description:
-    "The origin story, credentials, and philosophical position behind Trance Medicine and the work of Miskwa Kimiwan.",
+    "Miskwa Kimiwan is a certified professional hypnotist (ICBCH), author of Trance Medicine, and creator of the Quiet Fire CPH certification. Body-centered, evidence-informed practice.",
+  alternates: { canonical: "https://trancemedicine.com/about" },
+  openGraph: {
+    title: "About Miskwa Kimiwan | Trance Medicine",
+    description:
+      "The origin story, credentials, and philosophy of Miskwa Kimiwan — ICBCH-certified hypnotist and author of Trance Medicine.",
+    url: "https://trancemedicine.com/about",
+    type: "profile",
+  },
 };
 
 export default function About() {
