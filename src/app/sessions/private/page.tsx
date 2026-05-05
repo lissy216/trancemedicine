@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 export const metadata: Metadata = {
   title: "Private Sessions",
@@ -158,28 +159,28 @@ export default function PrivateSessions() {
         </div>
       </section>
 
-      {/* How to Begin */}
+      {/* Book a Session */}
       <section className="py-20 px-6" style={{ backgroundColor: "#EADDC8" }}>
-        <div className="max-w-2xl mx-auto text-center">
-          <h2
-            className="text-2xl mb-6"
-            style={{ fontFamily: "Georgia, serif", color: "#2F2925" }}
-          >
-            How to Begin
-          </h2>
-          <p className="text-sm leading-relaxed mb-8" style={{ color: "#2F2925" }}>
-            The first step is a brief intake form. It takes five minutes. It helps understand what you are carrying
-            and whether this work is appropriate for you right now. Hypnosis is powerful, and not everyone is a
-            candidate at this moment. Once the intake is reviewed, you will receive a link to book your first
-            session.
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <h2
+              className="text-2xl mb-4"
+              style={{ fontFamily: "Georgia, serif", color: "#2F2925" }}
+            >
+              Book a Session
+            </h2>
+            <p className="text-sm leading-relaxed max-w-xl mx-auto" style={{ color: "#2F2925" }}>
+              Choose 90 minutes for your first session (includes intake) or 60 minutes for follow-up work.
+              Select your preferred format — video, phone, or in-person at Dark Horse Healing Lodge.
+            </p>
+          </div>
+          <CalendlyEmbed />
+          <p className="mt-6 text-xs text-center" style={{ color: "#8A4F36" }}>
+            Have a question before booking?{" "}
+            <Link href="/contact" className="underline hover:opacity-70">
+              Get in touch first.
+            </Link>
           </p>
-          <Link
-            href="/contact"
-            className="inline-block text-sm font-semibold px-8 py-4 rounded transition-opacity hover:opacity-90"
-            style={{ backgroundColor: "#D9AA3A", color: "#2F2925" }}
-          >
-            Start the Intake
-          </Link>
         </div>
       </section>
     </>
