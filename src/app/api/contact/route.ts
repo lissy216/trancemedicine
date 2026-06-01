@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
     }
 
     await resend.emails.send({
-      from: "Trance Medicine <hello@trancemedicine.com>",
+      from: "Trance Medicine <heal@trancemedicine.com>",
       to: ["the8thfire@outlook.com"],
       replyTo: email,
       subject: `[${inquiryType || "Contact"}] Message from ${name}`,
