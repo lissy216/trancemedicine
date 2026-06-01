@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -181,6 +182,50 @@ export default function Home() {
                 </Link>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* The Book */}
+      <section className="py-20 px-6" style={{ backgroundColor: "#2F2925" }}>
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="flex-shrink-0">
+              <Image
+                src="/book-cover.png"
+                alt="Trance Medicine by Miskwa Kimiwan"
+                width={280}
+                height={420}
+                className="rounded shadow-2xl"
+                priority
+              />
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-widest mb-4" style={{ color: "#B38A32" }}>
+                Now Available
+              </p>
+              <h2
+                className="text-3xl md:text-4xl mb-2 leading-tight"
+                style={{ fontFamily: "Georgia, serif", color: "#EADDC8" }}
+              >
+                Trance Medicine
+              </h2>
+              <p className="text-sm mb-6" style={{ color: "#B38A32" }}>
+                Healing Where the Wound Became the Self
+              </p>
+              <p className="text-base leading-relaxed mb-8" style={{ color: "#d4c4a8" }}>
+                Thirty chapters on what hypnosis actually looks like when you strip away the performance and the
+                clinical distance. Written for the person who has tried everything and the practitioner who knows
+                there has to be more.
+              </p>
+              <Link
+                href="/book"
+                className="inline-block text-sm font-semibold px-8 py-4 rounded transition-opacity hover:opacity-90"
+                style={{ backgroundColor: "#D9AA3A", color: "#2F2925" }}
+              >
+                Read More About the Book
+              </Link>
+            </div>
           </div>
         </div>
       </section>
