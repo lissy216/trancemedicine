@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SiteGuide from "@/components/SiteGuide";
 import NewsletterBar from "@/components/NewsletterBar";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -73,6 +74,7 @@ export default function RootLayout({
         <main>{children}</main>
         <NewsletterBar />
         <Footer />
+        <SiteGuide />
         <Analytics />
         <SpeedInsights />
       </body>
