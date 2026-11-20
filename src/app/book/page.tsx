@@ -169,12 +169,14 @@ export default function Book() {
           <p className="text-sm mb-8" style={{ color: "#d4c4a8" }}>
             Trance Medicine is available now.
           </p>
+          {/* No bookseller link yet, so this asks rather than pretending to order.
+              When the book has a retailer, point this at it and say "Order". */}
           <Link
-            href="/newsletter"
+            href="/contact"
             className="inline-block text-sm font-semibold px-8 py-4 rounded transition-opacity hover:opacity-90"
             style={{ backgroundColor: "#D9AA3A", color: "#2F2925" }}
           >
-            Order Trance Medicine
+            Ask How to Get a Copy
           </Link>
           <p className="mt-6 text-xs" style={{ color: "#B38A32" }}>
             Not ready to order? Subscribe to the newsletter and be the first to know about updates, events, and

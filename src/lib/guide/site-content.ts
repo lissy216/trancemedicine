@@ -52,7 +52,7 @@ From the Pages
 “The body does not lie. It cannot. It has no mechanism for dishonesty. When your mind says you are fine and your shoulders are pressed against your ears, believe the shoulders. When your mind says you have forgiven and your jaw is clenched so tight it aches, believe the jaw. The body is the primary site of truth, and it has been trying to tell you something for years. This book is about learning to listen.”
 Get the Book
 Trance Medicine is available now.
-Order Trance Medicine
+Ask How to Get a Copy
 Not ready to order? Subscribe to the newsletter and be the first to know about updates, events, and new chapters.
 
 === PAGE: https://trancemedicine.com/contact ===

@@ -1,18 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import { subscribe } from "@/lib/subscribe";
 
 export default function NewsletterBar() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 800));
-    setSubmitted(true);
+    setError("");
+    const problem = await subscribe(name, email, "footer bar");
+    if (problem) setError(problem);
+    else setSubmitted(true);
     setLoading(false);
   }
 
@@ -37,7 +41,7 @@ export default function NewsletterBar() {
 
         {submitted ? (
           <p className="text-lg" style={{ color: "#D9AA3A", fontFamily: "Georgia, serif" }}>
-            You are in. Check your inbox for the practice.
+            You are in. The practice will come to your inbox, along with the weekly letter.
           </p>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
@@ -76,6 +80,11 @@ export default function NewsletterBar() {
               {loading ? "Sending…" : "Subscribe"}
             </button>
           </form>
+        )}
+        {error && !submitted && (
+          <p className="mt-4 text-sm" role="alert" style={{ color: "#D9AA3A" }}>
+            {error}
+          </p>
         )}
       </div>
     </section>

@@ -1,18 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import { subscribe } from "@/lib/subscribe";
 
 export default function Newsletter() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 800));
-    setSubmitted(true);
+    setError("");
+    const problem = await subscribe(name, email, "newsletter page");
+    if (problem) setError(problem);
+    else setSubmitted(true);
     setLoading(false);
   }
 
@@ -74,7 +78,7 @@ export default function Newsletter() {
                 You are in.
               </p>
               <p className="mt-2 text-sm" style={{ color: "#EADDC8" }}>
-                Check your inbox. The practice is on its way.
+                You are on the list. The practice will come to your inbox, along with the weekly letter.
               </p>
             </div>
           ) : (
@@ -105,6 +109,11 @@ export default function Newsletter() {
               >
                 {loading ? "Sending…" : "Send Me the Practice"}
               </button>
+              {error && (
+                <p className="text-sm" role="alert" style={{ color: "#D9AA3A" }}>
+                  {error}
+                </p>
+              )}
             </form>
           )}
         </div>
